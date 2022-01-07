@@ -1,7 +1,7 @@
 #!/bin/bash
 #sudo?
 echo "user: $EUID" > result.yml
-#if [ "$EUID" -ne 0 ]; then sudo -s; fi
+if [ "$EUID" -ne 0 ]; then sudo -s; exit; fi
 #Объем RAM
 printf "MemTotal: " >> result.yml
 grep MemTotal /proc/meminfo | awk '{print $2}' >> result.yml
