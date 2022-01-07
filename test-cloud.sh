@@ -1,10 +1,10 @@
 #!/bin/bash
 #sudo?
-echo "pwd: $pwd" > result.yml
+echo "pwd: $pwd" | tee result.yml
 if [ "$EUID" -ne 0 ]; then echo "Error: non root user, use root"; exit 1; fi
 #Объем RAM
-printf "MemTotal: " >> result.yml
-grep MemTotal /proc/meminfo | awk '{print $2}' >> result.yml
+printf "MemTotal: " | tee -a result.yml
+grep MemTotal /proc/meminfo | awk '{print $2}' | tee -a result.yml
 #Объем swap
 printf "SwapTotal: " >> result.yml
 grep SwapTotal /proc/meminfo | awk '{print $2}' >> result.yml
