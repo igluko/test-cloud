@@ -1,6 +1,6 @@
 #!/bin/bash
 #sudo?
-echo "pwd: $pwd" | tee result.yml
+echo "pwd: `pwd`" | tee result.yml
 if [ "$EUID" -ne 0 ]; then echo "Error: non root user, use root"; exit 1; fi
 #Объем RAM
 printf "MemTotal: " | tee -a result.yml
