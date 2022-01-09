@@ -27,7 +27,7 @@ printf "timeUpgrade: " | tee -a result.yml
 #-r [1-3]: [CPU only, Memory only, All tests] Autorun tests and export scores to [results_cpu.yml, results_memory.yml, results_all.yml]
 curl https://www.passmark.com/downloads/pt_linux_x64.zip -o pt_linux_x64.zip
 apt install unzip
-unzip pt_linux_x64.zip -y
+unzip pt_linux_x64.zip
 apt install libncurses5 -y
 PerformanceTest/pt_linux_x64 -r 3
 cat results_all.yml | grep OSName | tee -a result.yml
