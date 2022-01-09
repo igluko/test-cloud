@@ -48,6 +48,6 @@ docker info |  awk -F ":" '$1==" Server Version" {print $2}' | xargs | xargs | t
 apt-get install curl
 curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
 apt-get install speedtest
-speedtest --accept-license | tee -a result.yml
+speedtest --accept-license --accept-gdpr | tee -a result.yml
 speedtest -s 2706 | tee -a result.yml
 
