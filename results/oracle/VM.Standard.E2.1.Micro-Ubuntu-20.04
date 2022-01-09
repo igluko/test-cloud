@@ -1,0 +1,38 @@
+pwd: /home/ubuntu
+MemTotal: 995472
+SwapTotal: 0
+usedSpace: 1764988
+packetsCount: 595
+timeUpdateTree: 0m25.353s
+sizeUpgrade: 395 MB
+timeUpgrade: 4m8.788s
+  OSName: Ubuntu 20.04.3 LTS
+  Kernel: 5.11.0-1022-oracle
+  Processor: AMD EPYC 7551 32-Core Processor
+  NumLogicals: 2
+  Memory: 972
+  NumLogicals: 2
+  SUMM_CPU: 681.76351847089256
+  SUMM_ME: 539.79832706844218
+timeInstallDocker: 1m20.801s
+versionDocker: 20.10.7
+
+   Speedtest by Ookla
+
+     Server: Claranet Benelux B.V. - Amsterdam (id = 30847)
+        ISP: Oracle Cloud
+    Latency:     1.10 ms   (0.01 ms jitter)
+   Download:    46.41 Mbps (data used: 61.0 MB )
+     Upload:    46.34 Mbps (data used: 70.1 MB )
+Packet Loss:     0.0%
+ Result URL: https://www.speedtest.net/result/c/65435328-60d0-4502-b920-4fdd99580097
+
+   Speedtest by Ookla
+
+     Server: DOM.RU - Voronezh (id = 2706)
+        ISP: Oracle Cloud
+    Latency:    59.23 ms   (0.04 ms jitter)
+   Download:    47.62 Mbps (data used: 48.9 MB )
+     Upload:    46.89 Mbps (data used: 62.7 MB )
+Packet Loss:     0.0%
+ Result URL: https://www.speedtest.net/result/c/1c2f73bd-dccb-40ad-9186-f56eb134137a
