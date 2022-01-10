@@ -43,7 +43,7 @@ printf "timeInstallDocker: " | tee -a result.yml
 (time apt install docker docker-compose -y 1>&0) 2>&1 | awk '$1=="real" {print $2}' | tee -a result.yml
 #Версия докера
 printf "versionDocker: " | tee -a result.yml
-docker info |  awk -F ":" '$1==" Server Version" {print $2}' | xargs | xargs | tee -a result.yml
+docker info |  awk -F ":" '$1==" Server Version" {print $2}' | xargs | tee -a result.yml
 #Spedtest
 apt-get install curl
 curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
