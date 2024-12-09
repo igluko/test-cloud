@@ -25,11 +25,12 @@ printf "timeUpgrade: " | tee -a result.yml
 (time DEBIAN_FRONTEND=noninteractive apt dist-upgrade -y 1>&0) 2>&1 | awk '$1=="real" {print $2}' | tee -a result.yml
 #CPU benchmark
 #-r [1-3]: [CPU only, Memory only, All tests] Autorun tests and export scores to [results_cpu.yml, results_memory.yml, results_all.yml]
-curl https://www.passmark.com/downloads/pt_linux_x64.zip -o pt_linux_x64.zip
-apt install unzip
-unzip pt_linux_x64.zip
-apt install libncurses5 -y
-PerformanceTest/pt_linux_x64 -r 3
+#curl https://www.passmark.com/downloads/pt_linux_x64.zip -o pt_linux_x64.zip
+#apt install unzip
+#unzip pt_linux_x64.zip
+#apt install libncurses5 -y
+#PerformanceTest/pt_linux_x64 -r 3
+curl -sSL https://www.passmark.com/downloads/pt_linux_x64.zip -o pt_linux_x64.zip && unzip pt_linux_x64.zip && chmod +x PerformanceTest/pt_linux_x64 && PerformanceTest/./pt_linux_x64
 cat results_all.yml | grep OSName | tee -a result.yml
 cat results_all.yml | grep Kernel | tee -a result.yml
 cat results_all.yml | grep Processor | tee -a result.yml
