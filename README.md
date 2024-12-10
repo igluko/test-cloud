@@ -18,7 +18,6 @@ echo u > /proc/sysrq-trigger && \
 dd if=$(find /tmp -name "*.img" | head -n 1) \
 of="$(lsblk -no pkname "$(findmnt / -o SOURCE -n)" | awk '{print "/dev/" $1}')" \
 bs=4M oflag=sync && \
-sync && \
 echo 1 > /proc/sys/kernel/sysrq && \
 echo b > /proc/sysrq-trigger
 ```
