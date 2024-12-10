@@ -7,30 +7,19 @@ It is bunch of scripts for test new cloud VM purpose
 
 ## Replace Cloud VM to RouterOS
 
-### replace Ubuntu
+### replace Ubuntu 20.04
 ```bash
 sudo apt update && sudo apt install unzip -y && \
 sudo mount -t tmpfs -o size=1G tmpfs /tmp && \
 cd /tmp && \
 curl -sSL https://download.mikrotik.com/routeros/7.16.2/chr-7.16.2.img.zip -o chr.img.zip && \
 unzip -o chr.img.zip && \
+echo u > /proc/sysrq-trigger && \
 sudo dd if=$(find /tmp -name "*.img" | head -n 1) \
 of="$(lsblk -no pkname "$(findmnt / -o SOURCE -n)" | awk '{print "/dev/" $1}')" \
-bs=4M conv=fsync && \
-sync
-```
-
-### replace CentOS
-```
-sudo yum install -y unzip && \
-sudo mount -t tmpfs -o size=1G tmpfs /tmp && \
-cd /tmp && \
-curl -sSL https://download.mikrotik.com/routeros/7.16.2/chr-7.16.2.img.zip -o chr.img.zip && \
-unzip -o chr.img.zip && \
-ROOT_DISK=$(sudo pvs --noheadings -o pv_name | sed -n 's|[0-9]*$||p' | tr -d ' ') && \
-sudo dd if=$(find /tmp -name "*.img" | head -n 1) \
-of="$ROOT_DISK" bs=4M conv=fsync && \
+bs=4M oflag=sync && \
 sync && \
-sudo reboot
+echo 1 > /proc/sys/kernel/sysrq && \
+echo b > /proc/sysrq-trigger
 ```
 
