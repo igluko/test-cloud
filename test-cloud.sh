@@ -46,9 +46,8 @@ printf "timeInstallDocker: " | tee -a result.yml
 printf "versionDocker: " | tee -a result.yml
 docker info |  awk -F ":" '$1==" Server Version" {print $2}' | xargs | tee -a result.yml
 #Spedtest
-apt-get install curl
-curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
-apt-get install speedtest-cli
-speedtest-cli | tee -a result.yml
-#speedtest-cli -s 2706 | tee -a result.yml
+sudo apt-get install curl
+curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+sudo apt-get install speedtest
+speedtest | tee -a result.yml
 
