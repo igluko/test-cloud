@@ -7,7 +7,7 @@ It is bunch of scripts for test new cloud VM purpose
 
 ## Replace Cloud VM to RouterOS
 
-### replace Ubuntu 20.04
+### replace Ubuntu ( 20.04, 22.04 )
 ```bash
 apt update && sudo apt install unzip -y && \
 mount -t tmpfs -o size=1G tmpfs /tmp && \
